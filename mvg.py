@@ -1,6 +1,6 @@
 #########################################################
-# CSF - Summer 2022 - Lab 02                            #
-# Set Philips Hue Lights depending on MVG travel time.  #
+#                                                       #
+# Query public transportation info from MVG.            #
 #                                                       #
 #                                                       #
 # Author: Michael Eggers, michael.eggers@hm.edu         #
