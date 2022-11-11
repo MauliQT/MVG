@@ -48,15 +48,28 @@ def get_travel_time_for_stationIDs(station_a, station_b):
 
     return travel_time
 
+# def get_train_type(station_a, station_b):
+#     mvg_resp = requests.get(MVG_ROUTING_URL, params={ "Station": station_a, "Sation": station_b})
+
+#     if mvg_resp.satus_code != requests.codes.ok:
+#         return None
+
+#     as_dict = mvg_resp.json()
+
+#     train_type = None
+#     for departures in as_dict["connectionList"]:
+
+
 def handle_route(start, destination):
     from_station  = name_to_station(start)
     to_station    = name_to_station(destination)
 
     if from_station and to_station:
-        print("Checking route from " + from_station["name"], from_station["id"] + " to " + to_station["name"], to_station["id"])
+        print("Route von " + from_station["name"]+ " zu " + to_station["name"]+ " wird geprüft")
     else:
         return "At least one unknown station!"
-    
+
+
     travel_time = get_travel_time_for_stationIDs(from_station["id"], to_station["id"])
     if travel_time:
         print("Time needed:", travel_time, "min")
@@ -64,4 +77,7 @@ def handle_route(start, destination):
         return "Could not calculate travel-time for this pair of stations!"
 
 # Test
-handle_route("Holzapfelkreuth", "Poccistr")
+print(handle_route(input("Start "), input("Destination ")))
+
+
+# added custom input, current progress only travel time & user input
